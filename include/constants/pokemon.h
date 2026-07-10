@@ -316,6 +316,7 @@ enum EvolutionConditions {
     IF_BAG_ITEM_COUNT,                  // The Player has the specific amount of an item in the bag. It then removes those items.
     IF_REGION,                          // The Player is in the specific region.
     IF_NOT_REGION,                      // The Player is NOT in the specific region.
+    IF_LEVEL,
     CONDITIONS_END
 };
 

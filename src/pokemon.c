@@ -4633,6 +4633,7 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
     u32 removeBagItemCount = 0;
     u32 evolutionTracker = GetMonData(mon, MON_DATA_EVOLUTION_TRACKER, 0);
     u32 partnerSpecies, partnerHeldItem;
+    u32 level = GetMonData(mon, MON_DATA_LEVEL, 0);
     enum HoldEffect partnerHoldEffect;
 
     if (tradePartner != NULL)
@@ -4881,7 +4882,12 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
             if (evolutionTracker >= params[i].arg2)
                 currentCondition = TRUE;
             break;
+            
         // Gen 9
+        case IF_LEVEL:
+            if (level >= params[i].arg1)
+                currentCondition = TRUE;
+            break;
         case IF_DEFEAT_X_WITH_ITEMS:
             if (evolutionTracker >= params[i].arg3)
                 currentCondition = TRUE;
