@@ -27503,3 +27503,10 @@ const u32 gObjectEventPic_Substitute[] = INCGFX_COMP("graphics/pokemon/question_
     const u32 gMonFrontPic_Egg[] = INCGFX_U32("graphics/pokemon/egg/anim_front.png", ".4bpp.smol");
     const u16 gMonPalette_Egg[] = INCGFX_U16("graphics/pokemon/egg/normal.pal", ".gbapal");
     const u8 gMonIcon_Egg[] = INCGFX_U8("graphics/pokemon/egg/icon.png", ".4bpp");
+
+    const u32 gMonFrontPic_Browt[] = INCGFX_U32("graphics/pokemon/browt/anim_front.png", ".4bpp.lz");
+    const u32 gMonBackPic_Browt[] = INCGFX_U32("graphics/pokemon/browt/back.png", ".4bpp.lz");
+    const u16 gMonPalette_Browt[] = INCGFX_U16("graphics/pokemon/browt/normal.pal", ".gbapal");
+    const u16 gMonShinyPalette_Browt[] = INCGFX_U16("graphics/pokemon/browt/shiny.pal", ".gbapal");
+    const u8 gMonIcon_Browt[] = INCGFX_U8("graphics/pokemon/browt/icon.png", ".4bpp");
+    const u8 gMonFootprint_Browt[] = INCGFX_U8("graphics/pokemon/browt/footprint.png", ".1bpp");

@@ -246,6 +246,60 @@ const struct SpeciesInfo gSpeciesInfo[] =
         //.perfectIVCount = NUM_STATS,
     },
     */
+    [SPECIES_BROWT] =
+    {
+        .baseHP        = 50,
+        .baseAttack    = 66,
+        .baseDefense   = 42,
+        .baseSpeed     = 30,
+        .baseSpAttack  = 66,
+        .baseSpDefense = 47,
+        .types = MON_TYPES(TYPE_GRASS),
+        .catchRate = 45,
+        .expYield = 67,
+        .evYield_HP = 1,
+        .evYield_Defense = 1,
+        .evYield_SpDefense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_OVERGROW, ABILITY_BIG_PECKS, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_GREEN,
+        .speciesName = _("Browt"),
+        .cryId = CRY_NONE,
+        .natDexNum = NATIONAL_DEX_BROWT,
+        .categoryName = _("Bean Chick"),
+        .height = 3,
+        .weight = 35,
+        .description = COMPOUND_STRING(
+            "This is a newly discovered Pokémon.\n"
+            "It is currently under investigation.\n"
+            "No detailed information is available\n"
+            "at this time."),
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Browt,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 0,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Browt,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 7,
+        .backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_Browt,
+        .shinyPalette = gMonShinyPalette_Browt,
+        .iconSprite = gMonIcon_Browt,
+        .iconPalIndex = 0,
+        FOOTPRINT(QuestionMark)
+        .levelUpLearnset = sBrowtLevelUpLearnset,
+        .teachableLearnset = sNoneTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_DARTRIX},
+                                {EVO_ITEM, ITEM_MOOMOO_MILK, SPECIES_MILTANK}),
+    },
 };
 
 const struct EggData gEggDatas[EGG_ID_COUNT] =
