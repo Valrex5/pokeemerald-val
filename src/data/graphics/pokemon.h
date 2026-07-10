@@ -27510,3 +27510,17 @@ const u32 gObjectEventPic_Substitute[] = INCGFX_COMP("graphics/pokemon/question_
     const u16 gMonShinyPalette_Browt[] = INCGFX_U16("graphics/pokemon/browt/shiny.pal", ".gbapal");
     const u8 gMonIcon_Browt[] = INCGFX_U8("graphics/pokemon/browt/icon.png", ".4bpp");
     const u8 gMonFootprint_Browt[] = INCGFX_U8("graphics/pokemon/browt/footprint.png", ".1bpp");
+
+    const u32 gMonFrontPic_Pombon[] = INCGFX_U32("graphics/pokemon/pombon/anim_front.png", ".4bpp.lz");
+    const u32 gMonBackPic_Pombon[] = INCGFX_U32("graphics/pokemon/pombon/back.png", ".4bpp.lz");
+    const u16 gMonPalette_Pombon[] = INCGFX_U16("graphics/pokemon/pombon/normal.pal", ".gbapal");
+    const u16 gMonShinyPalette_Pombon[] = INCGFX_U16("graphics/pokemon/pombon/shiny.pal", ".gbapal");
+    const u8 gMonIcon_Pombon[] = INCGFX_U8("graphics/pokemon/pombon/icon.png", ".4bpp");
+    const u8 gMonFootprint_Pombon[] = INCGFX_U8("graphics/pokemon/pombon/footprint.png", ".1bpp");
+
+    const u32 gMonFrontPic_Gecqua[] = INCGFX_U32("graphics/pokemon/gecqua/anim_front.png", ".4bpp.lz");
+    const u32 gMonBackPic_Gecqua[] = INCGFX_U32("graphics/pokemon/gecqua/back.png", ".4bpp.lz");
+    const u16 gMonPalette_Gecqua[] = INCGFX_U16("graphics/pokemon/gecqua/normal.pal", ".gbapal");
+    const u16 gMonShinyPalette_Gecqua[] = INCGFX_U16("graphics/pokemon/gecqua/shiny.pal", ".gbapal");
+    const u8 gMonIcon_Gecqua[] = INCGFX_U8("graphics/pokemon/gecqua/icon.png", ".4bpp");
+    const u8 gMonFootprint_Gecqua[] = INCGFX_U8("graphics/pokemon/gecqua/footprint.png", ".1bpp");

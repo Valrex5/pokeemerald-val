@@ -1688,8 +1688,10 @@
 #define SPECIES_TATSUGIRI_STRETCHY_MEGA                 1571
 #define SPECIES_GLIMMORA_MEGA                           1572
 #define SPECIES_BROWT                                   1573
+#define SPECIES_POMBON                                  1574
+#define SPECIES_GECQUA                                  1575
 
-#define SPECIES_EGG                                     (SPECIES_BROWT + 1)
+#define SPECIES_EGG                                     (SPECIES_GECQUA + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 
