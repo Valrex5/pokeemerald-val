@@ -257,9 +257,8 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 45,
         .expYield = 67,
-        .evYield_HP = 1,
-        .evYield_Defense = 1,
-        .evYield_SpDefense = 1,
+        .evYield_Attack = 1,
+        .evYield_SpAttack = 1,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
@@ -297,18 +296,23 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sBrowtLevelUpLearnset,
         .teachableLearnset = sNoneTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_DARTRIX},
-                                {EVO_ITEM, ITEM_MOOMOO_MILK, SPECIES_MILTANK}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_CHIMECHO, CONDITIONS({IF_KNOWS_MOVE, MOVE_PSYBEAM})},
+                                {EVO_LEVEL, 22, SPECIES_BEEDRILL, CONDITIONS({IF_ATK_LT_SPATK})},
+                                {EVO_LEVEL, 22, SPECIES_DARTRIX, CONDITIONS({IF_ATK_GT_SPATK})},
+                                {EVO_LEVEL, 22, SPECIES_STARAVIA, CONDITIONS({IF_ATK_EQ_SPATK})},
+                                {EVO_ITEM, ITEM_MOOMOO_MILK, SPECIES_MILTANK, CONDITIONS({IF_LEVEL, 17})},
+                                {EVO_ITEM, ITEM_SHINY_STONE, SPECIES_CHERRIM_SUNSHINE, CONDITIONS({IF_LEVEL, 19})}
+                            ),
     },
 
     [SPECIES_POMBON] =
     {
-        .baseHP        = 50,
-        .baseAttack    = 66,
-        .baseDefense   = 42,
-        .baseSpeed     = 30,
-        .baseSpAttack  = 66,
-        .baseSpDefense = 47,
+        .baseHP        = 40,
+        .baseAttack    = 64,
+        .baseDefense   = 64,
+        .baseSpeed     = 46,
+        .baseSpAttack  = 30,
+        .baseSpDefense = 39,
         .types = MON_TYPES(TYPE_FIRE),
         .catchRate = 45,
         .expYield = 67,
@@ -352,18 +356,23 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sPombonLevelUpLearnset,
         .teachableLearnset = sNoneTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_ARCANINE},
-                                {EVO_ITEM, ITEM_MOOMOO_MILK, SPECIES_TAUROS}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_THROH, CONDITIONS({IF_KNOWS_MOVE, MOVE_FORCE_PALM})},
+                                {EVO_LEVEL, 22, SPECIES_OINKOLOGNE_F, CONDITIONS({IF_ATK_LT_DEF})},
+                                {EVO_LEVEL, 22, SPECIES_ARCANINE, CONDITIONS({IF_ATK_GT_DEF})},
+                                {EVO_LEVEL, 22, SPECIES_BOLTUND, CONDITIONS({IF_ATK_EQ_DEF})},
+                                {EVO_ITEM, ITEM_MOOMOO_MILK, SPECIES_TAUROS, CONDITIONS({IF_LEVEL, 17})},
+                                {EVO_ITEM, ITEM_DUSK_STONE, SPECIES_HOUNDOOM, CONDITIONS({IF_LEVEL, 19})}
+                            ),
     },
 
     [SPECIES_GECQUA] =
     {
-        .baseHP        = 50,
-        .baseAttack    = 66,
-        .baseDefense   = 42,
-        .baseSpeed     = 30,
-        .baseSpAttack  = 66,
-        .baseSpDefense = 47,
+        .baseHP        = 40,
+        .baseAttack    = 36,
+        .baseDefense   = 31,
+        .baseSpeed     = 62,
+        .baseSpAttack  = 62,
+        .baseSpDefense = 46,
         .types = MON_TYPES(TYPE_WATER),
         .catchRate = 45,
         .expYield = 67,
@@ -407,8 +416,13 @@ const struct SpeciesInfo gSpeciesInfo[] =
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sGecquaLevelUpLearnset,
         .teachableLearnset = sNoneTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_DRIZZILE},
-                                {EVO_ITEM, ITEM_MOOMOO_MILK, SPECIES_BOUFFALANT}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_ABSOL, CONDITIONS({IF_KNOWS_MOVE, MOVE_SNARL})},
+                                {EVO_LEVEL, 22, SPECIES_VANILLISH, CONDITIONS({IF_SPEED_LT_SPATK})},
+                                {EVO_LEVEL, 22, SPECIES_DRIZZILE, CONDITIONS({IF_SPEED_GT_SPATK})},
+                                {EVO_LEVEL, 22, SPECIES_SEVIPER, CONDITIONS({IF_SPEED_ET_SPATK})}, 
+                                {EVO_ITEM, ITEM_MOOMOO_MILK, SPECIES_BOUFFALANT, CONDITIONS({IF_LEVEL, 17})},
+                                {EVO_ITEM, ITEM_DAWN_STONE, SPECIES_SEADRA, CONDITIONS({IF_LEVEL, 19})}
+                            ),
     },
 };
 
