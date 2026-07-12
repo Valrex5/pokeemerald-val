@@ -419,7 +419,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_ABSOL, CONDITIONS({IF_KNOWS_MOVE, MOVE_SNARL})},
                                 {EVO_LEVEL, 22, SPECIES_VANILLISH, CONDITIONS({IF_SPEED_LT_SPATK})},
                                 {EVO_LEVEL, 22, SPECIES_DRIZZILE, CONDITIONS({IF_SPEED_GT_SPATK})},
-                                {EVO_LEVEL, 22, SPECIES_SEVIPER, CONDITIONS({IF_SPEED_ET_SPATK})}, 
+                                {EVO_LEVEL, 22, SPECIES_SEVIPER, CONDITIONS({IF_SPEED_EQ_SPATK})}, 
                                 {EVO_ITEM, ITEM_MOOMOO_MILK, SPECIES_BOUFFALANT, CONDITIONS({IF_LEVEL, 17})},
                                 {EVO_ITEM, ITEM_DAWN_STONE, SPECIES_SEADRA, CONDITIONS({IF_LEVEL, 19})}
                             ),

@@ -6668,16 +6668,16 @@ static void PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 dept
                     StringAppend(gStringVar4, COMPOUND_STRING("Speed < Sp. Def"));
                     break;
 
-                case IF_SPEED_ET_ATK:
+                case IF_SPEED_EQ_ATK:
                     StringAppend(gStringVar4, COMPOUND_STRING("Speed = Atk"));
                     break;
-                case IF_SPEED_ET_DEF:
+                case IF_SPEED_EQ_DEF:
                     StringAppend(gStringVar4, COMPOUND_STRING("Speed = Def"));
                     break;
-                case IF_SPEED_ET_SPATK:
+                case IF_SPEED_EQ_SPATK:
                     StringAppend(gStringVar4, COMPOUND_STRING("Speed = Sp. Atk"));
                     break;
-                case IF_SPEED_ET_SPDEF:
+                case IF_SPEED_EQ_SPDEF:
                     StringAppend(gStringVar4, COMPOUND_STRING("Speed = Sp. Def"));
                     break;
 

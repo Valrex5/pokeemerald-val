@@ -4791,19 +4791,19 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
                 currentCondition = TRUE;
             break;
 
-        case IF_SPEED_ET_ATK:
+        case IF_SPEED_EQ_ATK:
             if (speed == attack)
                 currentCondition = TRUE;
             break;
-        case IF_SPEED_ET_DEF:
+        case IF_SPEED_EQ_DEF:
             if (speed == defense)
                 currentCondition = TRUE;
             break;
-        case IF_SPEED_ET_SPATK:
+        case IF_SPEED_EQ_SPATK:
             if (speed == specialAttack)
                 currentCondition = TRUE;
             break;
-        case IF_SPEED_ET_SPDEF:
+        case IF_SPEED_EQ_SPDEF:
             if (speed == specialDefense)
                 currentCondition = TRUE;
             break;

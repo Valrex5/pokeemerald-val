@@ -310,10 +310,10 @@ enum EvolutionConditions {
     IF_SPEED_LT_SPATK,                    // The Pokémon's Speed is lower than its Special Attack stat.
     IF_SPEED_LT_SPDEF,                    // The Pokémon's Speed is lower than its Special Defense stat.
 
-    IF_SPEED_ET_ATK,                      // The Pokémon's Speed is equal than its Attack stat.
-    IF_SPEED_ET_DEF,                      // The Pokémon's Speed is equal than its Defense stat.
-    IF_SPEED_ET_SPATK,                    // The Pokémon's Speed is equal than its Special Attack stat.
-    IF_SPEED_ET_SPDEF,                    // The Pokémon's Speed is equal than its Special Defense stat.
+    IF_SPEED_EQ_ATK,                      // The Pokémon's Speed is equal than its Attack stat.
+    IF_SPEED_EQ_DEF,                      // The Pokémon's Speed is equal than its Defense stat.
+    IF_SPEED_EQ_SPATK,                    // The Pokémon's Speed is equal than its Special Attack stat.
+    IF_SPEED_EQ_SPDEF,                    // The Pokémon's Speed is equal than its Special Defense stat.
 
     IF_HOLD_ITEM,                       // The Pokémon is holding a specific item.
     // Gen 3
