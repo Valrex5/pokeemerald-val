@@ -231,11 +231,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sVenusaurLevelUpLearnset,
         .teachableLearnset = sVenusaurTeachableLearnset,
-        .formSpeciesIdTable = sVenusaurFormSpeciesIdTable,
-        .formChangeTable = sVenusaurFormChangeTable,
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VENUSAUR_MEGA, CONDITIONS({IF_LEVEL, 40})},
+                                {EVO_ITEM, ITEM_WATER_STONE, SPECIES_VENUSAUR_GMAX, CONDITIONS({IF_LEVEL, 50})}),
     },
 
-#if P_MEGA_EVOLUTIONS
     [SPECIES_VENUSAUR_MEGA] =
     {
         .baseHP        = 80,
@@ -256,12 +255,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_GRASS),
         .abilities = { ABILITY_THICK_FAT, ABILITY_THICK_FAT, ABILITY_THICK_FAT },
         .bodyColor = BODY_COLOR_GREEN,
-        .speciesName = _("Venusaur"),
-    #if P_MODIFIED_MEGA_CRIES
+        .speciesName = _("M-Venusaur"),
         .cryId = CRY_VENUSAUR_MEGA,
-    #else
-        .cryId = CRY_VENUSAUR,
-    #endif // P_MODIFIED_MEGA_CRIES
         .natDexNum = NATIONAL_DEX_VENUSAUR,
         .categoryName = _("Seed"),
         .height = 24,
@@ -290,26 +285,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(2, 6, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Venusaur)
-    #if OW_BATTLE_ONLY_FORMS
-        OVERWORLD(
-            sPicTable_VenusaurMega,
-            SIZE_32x32,
-            SHADOW_SIZE_M,
-            TRACKS_FOOT,
-            sAnimTable_Following,
-            gOverworldPalette_VenusaurMega,
-            gShinyOverworldPalette_VenusaurMega
-        )
-    #endif //OW_BATTLE_ONLY_FORMS
-        .isMegaEvolution = TRUE,
         .levelUpLearnset = sVenusaurLevelUpLearnset,
         .teachableLearnset = sVenusaurTeachableLearnset,
-        .formSpeciesIdTable = sVenusaurFormSpeciesIdTable,
-        .formChangeTable = sVenusaurFormChangeTable,
     },
-#endif //P_MEGA_EVOLUTIONS
 
-#if P_GIGANTAMAX_FORMS
     [SPECIES_VENUSAUR_GMAX] =
     {
         .baseHP        = 80,
@@ -330,7 +309,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER, EGG_GROUP_GRASS),
         .abilities = { ABILITY_OVERGROW, ABILITY_NONE, ABILITY_CHLOROPHYLL },
         .bodyColor = BODY_COLOR_GREEN,
-        .speciesName = _("Venusaur"),
+        .speciesName = _("G-Venusaur"),
         .cryId = CRY_VENUSAUR,
         .natDexNum = NATIONAL_DEX_VENUSAUR,
         .categoryName = _("Seed"),
@@ -361,13 +340,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(2, 4, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Venusaur)
-        .isGigantamax = TRUE,
         .levelUpLearnset = sVenusaurLevelUpLearnset,
         .teachableLearnset = sVenusaurTeachableLearnset,
-        .formSpeciesIdTable = sVenusaurFormSpeciesIdTable,
-        .formChangeTable = sVenusaurFormChangeTable,
     },
-#endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_BULBASAUR
 
 #if P_FAMILY_CHARMANDER
