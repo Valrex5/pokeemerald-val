@@ -4624,6 +4624,9 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
     u32 friendship = GetMonData(mon, MON_DATA_FRIENDSHIP, 0);
     u32 attack = GetMonData(mon, MON_DATA_ATK, 0);
     u32 defense = GetMonData(mon, MON_DATA_DEF, 0);
+    u32 specialAttack = GetMonData(mon, MON_DATA_SPATK, 0);
+    u32 specialDefense = GetMonData(mon, MON_DATA_SPDEF, 0);
+    u32 speed = GetMonData(mon, MON_DATA_SPEED, 0);
     u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, 0);
     u16 upperPersonality = personality >> 16;
     u32 weather = GetCurrentWeather();
@@ -4674,6 +4677,7 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
             if (friendship >= params[i].arg1)
                 currentCondition = TRUE;
             break;
+
         case IF_ATK_GT_DEF:
             if (attack > defense)
                 currentCondition = TRUE;
@@ -4686,6 +4690,124 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
             if (attack < defense)
                 currentCondition = TRUE;
             break;
+
+        case IF_SPATK_GT_SPDEF:
+            if (specialAttack > specialDefense)
+                currentCondition = TRUE;
+            break;
+        case IF_SPATK_EQ_SPDEF:
+            if (specialAttack == specialDefense)
+                currentCondition = TRUE;
+            break;
+        case IF_SPATK_LT_SPDEF:
+            if (specialAttack < specialDefense)
+                currentCondition = TRUE;
+            break;
+
+        case IF_ATK_GT_SPATK:
+            if (attack > specialAttack)
+                currentCondition = TRUE;
+            break;
+        case IF_ATK_EQ_SPATK:
+            if (attack == specialAttack)
+                currentCondition = TRUE;
+            break;
+        case IF_ATK_LT_SPATK:
+            if (attack < specialAttack)
+                currentCondition = TRUE;
+            break;
+
+        case IF_DEF_GT_SPDEF:
+            if (defense > specialDefense)
+                currentCondition = TRUE;
+            break;
+        case IF_DEF_EQ_SPDEF:
+            if (defense == specialDefense)
+                currentCondition = TRUE;
+            break;
+        case IF_DEF_LT_SPDEF:
+            if (defense < specialDefense)
+                currentCondition = TRUE;
+            break;
+
+
+        case IF_ATK_GT_SPDEF:
+            if (attack > specialDefense)
+                currentCondition = TRUE;
+            break;
+        case IF_ATK_EQ_SPDEF:
+            if (attack == specialDefense)
+                currentCondition = TRUE;
+            break;
+        case IF_ATK_LT_SPDEF:
+            if (attack < specialDefense)
+                currentCondition = TRUE;
+            break;
+
+        case IF_SPATK_GT_DEF:
+            if (specialAttack > defense)
+                currentCondition = TRUE;
+            break;
+        case IF_SPATK_EQ_DEF:
+            if (specialAttack == defense)
+                currentCondition = TRUE;
+            break;
+        case IF_SPATK_LT_DEF:
+            if (specialAttack < defense)
+                currentCondition = TRUE;
+            break;
+
+        case IF_SPEED_GT_ATK:
+            if (speed > attack)
+                currentCondition = TRUE;
+            break;
+        case IF_SPEED_GT_DEF:
+            if (speed > defense)
+                currentCondition = TRUE;
+            break;
+        case IF_SPEED_GT_SPATK:
+            if (speed > specialAttack)
+                currentCondition = TRUE;
+            break;
+        case IF_SPEED_GT_SPDEF:
+            if (speed > specialDefense)
+                currentCondition = TRUE;
+            break;
+
+        case IF_SPEED_LT_ATK:
+            if (speed < attack)
+                currentCondition = TRUE;
+            break;
+        case IF_SPEED_LT_DEF:
+            if (speed < defense)
+                currentCondition = TRUE;
+            break;
+        case IF_SPEED_LT_SPATK:
+            if (speed < specialAttack)
+                currentCondition = TRUE;
+            break;
+        case IF_SPEED_LT_SPDEF:
+            if (speed < specialDefense)
+                currentCondition = TRUE;
+            break;
+
+        case IF_SPEED_ET_ATK:
+            if (speed == attack)
+                currentCondition = TRUE;
+            break;
+        case IF_SPEED_ET_DEF:
+            if (speed == defense)
+                currentCondition = TRUE;
+            break;
+        case IF_SPEED_ET_SPATK:
+            if (speed == specialAttack)
+                currentCondition = TRUE;
+            break;
+        case IF_SPEED_ET_SPDEF:
+            if (speed == specialDefense)
+                currentCondition = TRUE;
+            break;
+
         case IF_TIME:
             if (GetTimeOfDay() == params[i].arg1)
                 currentCondition = TRUE;

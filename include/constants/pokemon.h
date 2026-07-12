@@ -275,9 +275,46 @@ enum EvolutionConditions {
     IF_TIME,                            // It is currently the specific time of day.
     IF_NOT_TIME,                        // It is NOT currently the specific time of day.
     IF_MIN_FRIENDSHIP,                  // The Pokémon has the defined amount of Friendship.
+
     IF_ATK_GT_DEF,                      // The Pokémon's Attack is greater than its Defense stat.
     IF_ATK_EQ_DEF,                      // The Pokémon's Attack is equal to its Defense stat.
     IF_ATK_LT_DEF,                      // The Pokémon's Attack is lower than its Defense stat.
+
+    IF_SPATK_GT_SPDEF,                  // The Pokémon's Special Attack is greater than its Special Defense stat.
+    IF_SPATK_EQ_SPDEF,                  // The Pokémon's Special Attack is equal to its Special Defense stat.
+    IF_SPATK_LT_SPDEF,                  // The Pokémon's Special Attack is lower than its Special Defense stat.`
+
+    IF_ATK_GT_SPATK,                    // The Pokémon's Attack is greater than its Special Attack stat.
+    IF_ATK_EQ_SPATK,                    // The Pokémon's Attack is equal to its Special Attack stat.
+    IF_ATK_LT_SPATK,                    // The Pokémon's Attack is lower than its Special Attack stat.
+
+    IF_DEF_GT_SPDEF,                    // The Pokémon's Defense is greater than its Special Defense stat.
+    IF_DEF_EQ_SPDEF,                    // The Pokémon's Defense is equal to its Special Defense stat.
+    IF_DEF_LT_SPDEF,                    // The Pokémon's Defense is lower than its Special Defense stat.
+
+    IF_ATK_GT_SPDEF,                    // The Pokémon's Attack is greater than its Special Defense stat.
+    IF_ATK_EQ_SPDEF,                    // The Pokémon's Attack is equal to its Special Defense stat.
+    IF_ATK_LT_SPDEF,                    // The Pokémon's Attack is lower than its Special Defense stat.
+
+    IF_SPATK_GT_DEF,                    // The Pokémon's Special Attack is greater than its Defense stat.
+    IF_SPATK_EQ_DEF,                    // The Pokémon's Special Attack is equal to its Defense stat.
+    IF_SPATK_LT_DEF,                    // The Pokémon's Special Attack is lower than its Defense stat.
+
+    IF_SPEED_GT_ATK,                      // The Pokémon's Speed is greater than its Attack stat.
+    IF_SPEED_GT_DEF,                      // The Pokémon's Speed is greater than its Defense stat.
+    IF_SPEED_GT_SPATK,                    // The Pokémon's Speed is greater than its Special Attack stat.
+    IF_SPEED_GT_SPDEF,                    // The Pokémon's Speed is greater than its Special Defense stat.
+
+    IF_SPEED_LT_ATK,                      // The Pokémon's Speed is lower than its Attack stat.
+    IF_SPEED_LT_DEF,                      // The Pokémon's Speed is lower than its Defense stat.
+    IF_SPEED_LT_SPATK,                    // The Pokémon's Speed is lower than its Special Attack stat.
+    IF_SPEED_LT_SPDEF,                    // The Pokémon's Speed is lower than its Special Defense stat.
+
+    IF_SPEED_ET_ATK,                      // The Pokémon's Speed is equal than its Attack stat.
+    IF_SPEED_ET_DEF,                      // The Pokémon's Speed is equal than its Defense stat.
+    IF_SPEED_ET_SPATK,                    // The Pokémon's Speed is equal than its Special Attack stat.
+    IF_SPEED_ET_SPDEF,                    // The Pokémon's Speed is equal than its Special Defense stat.
+
     IF_HOLD_ITEM,                       // The Pokémon is holding a specific item.
     // Gen 3
     IF_PID_UPPER_MODULO_10_GT,          // The Pokémon's upper personality value's modulo by 10 is greater than the defined value.

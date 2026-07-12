@@ -6581,6 +6581,7 @@ static void PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 dept
                 case IF_MIN_FRIENDSHIP:
                     StringAppend(gStringVar4, COMPOUND_STRING("{UP_ARROW_2}friendship"));
                     break;
+
                 case IF_ATK_GT_DEF:
                     StringAppend(gStringVar4, COMPOUND_STRING("Atk > Def"));
                     break;
@@ -6590,6 +6591,96 @@ static void PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 dept
                 case IF_ATK_LT_DEF:
                     StringAppend(gStringVar4, COMPOUND_STRING("Atk < Def"));
                     break;
+
+                case IF_SPATK_GT_SPDEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Sp. Atk > Sp. Def"));
+                    break;
+                case IF_SPATK_EQ_SPDEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Sp. Atk = Sp. Def"));
+                    break;
+                case IF_SPATK_LT_SPDEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Sp. Atk < Sp. Def"));
+                    break;
+
+                case IF_ATK_GT_SPATK:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Atk > Sp. Atk"));
+                    break;
+                case IF_ATK_EQ_SPATK:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Atk = Sp. Atk"));
+                    break;
+                case IF_ATK_LT_SPATK:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Atk < Sp. Atk"));
+                    break;
+
+                case IF_DEF_GT_SPDEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Def > Sp. Def"));
+                    break;
+                case IF_DEF_EQ_SPDEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Def = Sp. Def"));
+                    break;
+                case IF_DEF_LT_SPDEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Def < Sp. Def"));
+                    break;    
+
+                case IF_ATK_GT_SPDEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Atk > Sp. Def"));
+                    break;
+                case IF_ATK_EQ_SPDEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Atk = Sp. Def"));
+                    break;
+                case IF_ATK_LT_SPDEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Atk < Sp. Def"));
+                    break;
+
+                case IF_SPATK_GT_DEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Sp. Atk > Def"));
+                    break;
+                case IF_SPATK_EQ_DEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Sp. Atk = Def"));
+                    break;
+                case IF_SPATK_LT_DEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Sp. Atk < Def"));
+                    break;
+
+                case IF_SPEED_GT_ATK:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Speed > Atk"));
+                    break;
+                case IF_SPEED_GT_DEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Speed > Def"));
+                    break;
+                case IF_SPEED_GT_SPATK:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Speed > Sp. Atk"));
+                    break;
+                case IF_SPEED_GT_SPDEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Speed > Sp. Def"));
+                    break;
+                
+                case IF_SPEED_LT_ATK:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Speed < Atk"));
+                    break;
+                case IF_SPEED_LT_DEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Speed < Def"));
+                    break;
+                case IF_SPEED_LT_SPATK:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Speed < Sp. Atk"));
+                    break;
+                case IF_SPEED_LT_SPDEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Speed < Sp. Def"));
+                    break;
+
+                case IF_SPEED_ET_ATK:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Speed = Atk"));
+                    break;
+                case IF_SPEED_ET_DEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Speed = Def"));
+                    break;
+                case IF_SPEED_ET_SPATK:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Speed = Sp. Atk"));
+                    break;
+                case IF_SPEED_ET_SPDEF:
+                    StringAppend(gStringVar4, COMPOUND_STRING("Speed = Sp. Def"));
+                    break;
+
                 case IF_TIME:
                     switch (evolutions[i].params[j].arg1)
                     {
