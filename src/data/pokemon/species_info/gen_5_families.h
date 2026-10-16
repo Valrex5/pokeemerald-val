@@ -2622,11 +2622,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_SWOOBAT] =
     {
-        .baseHP        = 67,
+        .baseHP        = 76,
         .baseAttack    = 57,
-        .baseDefense   = 55,
+        .baseDefense   = 88,
         .baseSpeed     = 114,
-        .baseSpAttack  = 77,
+        .baseSpAttack  = 88,
         .baseSpDefense = 55,
         .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FLYING),
         .catchRate = 45,
@@ -2636,13 +2636,13 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .eggCycles = 15,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD, EGG_GROUP_FLYING),
-        .abilities = { ABILITY_UNAWARE, ABILITY_KLUTZ, ABILITY_SIMPLE },
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_UNAWARE, ABILITY_SIMPLE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Swoobat"),
         .cryId = CRY_SWOOBAT,
         .natDexNum = NATIONAL_DEX_SWOOBAT,
-        .categoryName = _("Courting"),
+        .categoryName = _("Ultimate"),
         .height = 9,
         .weight = 105,
         .description = COMPOUND_STRING(
@@ -2689,6 +2689,13 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sSwoobatLevelUpLearnset,
         .teachableLearnset = sSwoobatTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_XURKITREE, CONDITIONS({IF_KNOWS_MOVE, MOVE_PARABOLIC_CHARGE})},
+                                {EVO_LEVEL, 60, SPECIES_MALAMAR_MEGA, CONDITIONS({IF_SPATK_LT_DEF})},
+                                {EVO_LEVEL, 60, SPECIES_CLEFABLE_MEGA, CONDITIONS({IF_SPATK_GT_DEF})},
+                                {EVO_LEVEL, 60, SPECIES_ARTICUNO_GALAR, CONDITIONS({IF_SPATK_EQ_DEF})},
+                                {EVO_ITEM, ITEM_KINGS_ROCK, SPECIES_SLOWKING_GALAR, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_WATER_STONE, SPECIES_OCTILLERY, CONDITIONS({IF_LEVEL, 57})}
+							),
     },
 #endif //P_FAMILY_WOOBAT
 
@@ -2973,11 +2980,11 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #if P_MEGA_EVOLUTIONS
     [SPECIES_AUDINO_MEGA] =
     {
-        .baseHP        = 103,
+        .baseHP        = 123,
         .baseAttack    = 60,
         .baseDefense   = 126,
         .baseSpeed     = 50,
-        .baseSpAttack  = 80,
+        .baseSpAttack  = 100,
         .baseSpDefense = 126,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FAIRY),
         .catchRate = 255,
@@ -2988,18 +2995,14 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_HEALER, ABILITY_HEALER, ABILITY_HEALER },
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_SERENE_GRACE, ABILITY_REGENERATOR, ABILITY_NONE },
         .bodyColor = BODY_COLOR_WHITE,
-        .speciesName = _("Audino"),
-    #if P_MODIFIED_MEGA_CRIES
+        .speciesName = _("M-Audino"),
         .cryId = CRY_AUDINO_MEGA,
-    #else
-        .cryId = CRY_AUDINO,
-    #endif // P_MODIFIED_MEGA_CRIES
         .natDexNum = NATIONAL_DEX_AUDINO,
-        .categoryName = _("Hearing"),
+        .categoryName = _("Mega"),
         .height = 15,
         .weight = 320,
         .description = COMPOUND_STRING(
@@ -3038,12 +3041,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             gShinyOverworldPalette_AudinoMega
         )
     #endif //OW_BATTLE_ONLY_FORMS
-        .isMegaEvolution = TRUE,
-        .levelUpLearnset = sAudinoLevelUpLearnset,
+        .levelUpLearnset = sAudinoMegaLevelUpLearnset,
         .teachableLearnset = sAudinoTeachableLearnset,
         .eggMoveLearnset = sAudinoEggMoveLearnset,
-        .formSpeciesIdTable = sAudinoFormSpeciesIdTable,
-        .formChangeTable = sAudinoFormChangeTable,
     },
 #endif //P_MEGA_EVOLUTIONS
 #endif //P_FAMILY_AUDINO
@@ -8607,12 +8607,12 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_ESCAVALIER] =
     {
-        .baseHP        = 70,
-        .baseAttack    = 135,
-        .baseDefense   = 105,
+        .baseHP        = 80,
+        .baseAttack    = 130,
+        .baseDefense   = 110,
         .baseSpeed     = 20,
         .baseSpAttack  = 60,
-        .baseSpDefense = 105,
+        .baseSpDefense = 110,
         .types = MON_TYPES(TYPE_BUG, TYPE_STEEL),
         .catchRate = 75,
         .expYield = 173,
@@ -8621,8 +8621,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .eggCycles = 15,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_SWARM, ABILITY_SHELL_ARMOR, ABILITY_OVERCOAT },
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_OVERCOAT, ABILITY_SHELL_ARMOR, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Escavalier"),
         .cryId = CRY_ESCAVALIER,
@@ -8670,6 +8670,13 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sEscavalierLevelUpLearnset,
         .teachableLearnset = sEscavalierTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_TAPU_BULU, CONDITIONS({IF_KNOWS_MOVE, MOVE_SPIRIT_BREAK})},
+                                {EVO_LEVEL, 60, SPECIES_BUZZWOLE, CONDITIONS({IF_DEF_LT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_AGGRON_MEGA, CONDITIONS({IF_DEF_GT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_GENESECT, CONDITIONS({IF_DEF_EQ_SPDEF})},
+                                {EVO_ITEM, ITEM_REAPER_CLOTH, SPECIES_BANETTE_MEGA, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_WATER_STONE, SPECIES_OMANYTE, CONDITIONS({IF_LEVEL, 57})}
+							),
     },
 #endif //P_FAMILY_KARRABLAST
 
@@ -9293,8 +9300,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .baseHP        = 74,
         .baseAttack    = 94,
         .baseDefense   = 131,
-        .baseSpeed     = 20,
-        .baseSpAttack  = 54,
+        .baseSpeed     = 31,
+        .baseSpAttack  = 31,
         .baseSpDefense = 116,
         .types = MON_TYPES(TYPE_GRASS, TYPE_STEEL),
         .catchRate = 90,
@@ -9305,9 +9312,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS, EGG_GROUP_MINERAL),
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
     #if P_UPDATED_ABILITIES >= GEN_6
-        .abilities = { ABILITY_IRON_BARBS, ABILITY_NONE, ABILITY_ANTICIPATION },
+        .abilities = { ABILITY_IRON_BARBS, ABILITY_ANTICIPATION, ABILITY_NONE },
     #else
         .abilities = { ABILITY_IRON_BARBS, ABILITY_NONE, ABILITY_NONE },
     #endif
@@ -9315,7 +9322,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .speciesName = _("Ferrothorn"),
         .cryId = CRY_FERROTHORN,
         .natDexNum = NATIONAL_DEX_FERROTHORN,
-        .categoryName = _("Thorn Pod"),
+        .categoryName = _("Ultimate"),
         .height = 10,
         .weight = 1100,
         .description = COMPOUND_STRING(
@@ -9361,6 +9368,13 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sFerrothornLevelUpLearnset,
         .teachableLearnset = sFerrothornTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_GALLADE_MEGA, CONDITIONS({IF_KNOWS_MOVE, MOVE_SACRED_SWORD})},
+                                {EVO_LEVEL, 60, SPECIES_DEOXYS_DEFENSE, CONDITIONS({IF_SPEED_LT_SPATK})},
+                                {EVO_LEVEL, 60, SPECIES_AGGRON_MEGA, CONDITIONS({IF_SPEED_GT_SPATK})},
+                                {EVO_LEVEL, 60, SPECIES_CHESNAUGHT_MEGA, CONDITIONS({IF_SPEED_EQ_SPATK})},
+                                {EVO_ITEM, ITEM_PRETTY_FEATHER, SPECIES_BUTTERFREE_GMAX, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_MOON_STONE, SPECIES_METAGROSS, CONDITIONS({IF_LEVEL, 57})}
+							),
     },
 #endif //P_FAMILY_FERROSEED
 
@@ -10576,12 +10590,12 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 
     [SPECIES_BEARTIC] =
     {
-        .baseHP        = 95,
-        .baseAttack    = P_UPDATED_STATS >= GEN_7 ? 130 : 110,
-        .baseDefense   = 80,
+        .baseHP        = 100,
+        .baseAttack    = 130,
+        .baseDefense   = 90,
         .baseSpeed     = 50,
-        .baseSpAttack  = 70,
-        .baseSpDefense = 80,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_ICE),
         .catchRate = 60,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_7) ? 177 : 170,
@@ -10590,9 +10604,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
     #if P_UPDATED_ABILITIES >= GEN_7
-        .abilities = { ABILITY_SNOW_CLOAK, ABILITY_SLUSH_RUSH, ABILITY_SWIFT_SWIM },
+        .abilities = { ABILITY_SWIFT_SWIM, ABILITY_SLUSH_RUSH, ABILITY_NONE },
     #else
         .abilities = { ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_SWIFT_SWIM },
     #endif
@@ -10600,7 +10614,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .speciesName = _("Beartic"),
         .cryId = CRY_BEARTIC,
         .natDexNum = NATIONAL_DEX_BEARTIC,
-        .categoryName = _("Freezing"),
+        .categoryName = _("Ultimate"),
         .height = 26,
         .weight = 2600,
         .description = COMPOUND_STRING(
@@ -10644,6 +10658,13 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sBearticLevelUpLearnset,
         .teachableLearnset = sBearticTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_PINSIR_MEGA, CONDITIONS({IF_KNOWS_MOVE, MOVE_X_SCISSOR})},
+                                {EVO_LEVEL, 60, SPECIES_REGICE, CONDITIONS({IF_DEF_LT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_ABOMASNOW_MEGA, CONDITIONS({IF_DEF_GT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_URSALUNA_BLOODMOON, CONDITIONS({IF_DEF_EQ_SPDEF})},
+                                {EVO_ITEM, ITEM_KINGS_ROCK, SPECIES_SLOWKING_GALAR, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_WATER_STONE, SPECIES_URSHIFU_RAPID_STRIKE_GMAX, CONDITIONS({IF_LEVEL, 57})}
+							),
     },
 #endif //P_FAMILY_CUBCHOO
 
@@ -13798,9 +13819,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .baseHP        = 100,
         .baseAttack    = 77,
         .baseDefense   = 77,
-        .baseSpeed     = 90,
-        .baseSpAttack  = 128,
-        .baseSpDefense = 128,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 118,
+        .baseSpDefense = 118,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_PSYCHIC),
         .catchRate = 3,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
@@ -13809,18 +13830,18 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .evYield_SpDefense = 1,
         .itemCommon = ITEM_STAR_PIECE,
         .itemRare = ITEM_STAR_PIECE,
-        .genderRatio = MON_GENDERLESS,
+        .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 120,
         .friendship = 100,
-        .growthRate = GROWTH_SLOW,
+        .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_SERENE_GRACE, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_SERENE_GRACE, ABILITY_QUEEN_MAJESTY, ABILITY_NONE },
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = TRUE,
         .speciesName = _("Meloetta"),
         .cryId = CRY_MELOETTA,
         .natDexNum = NATIONAL_DEX_MELOETTA,
-        .categoryName = _("Melody"),
+        .categoryName = _("Ultimate"),
         .height = 6,
         .weight = 65,
         .description = COMPOUND_STRING(
@@ -13866,13 +13887,15 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
             gOverworldPalette_MeloettaAria,
             gShinyOverworldPalette_MeloettaAria
         )
-        .isMythical = TRUE,
-        .isFrontierBanned = TRUE,
-        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sMeloettaLevelUpLearnset,
         .teachableLearnset = sMeloettaTeachableLearnset,
-        .formSpeciesIdTable = sMeloettaFormSpeciesIdTable,
-        .formChangeTable = sMeloettaFormChangeTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_MILOTIC, CONDITIONS({IF_KNOWS_MOVE, MOVE_SPARKLING_ARIA})},
+                                {EVO_LEVEL, 60, SPECIES_AUDINO_MEGA, CONDITIONS({IF_SPATK_LT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_MELOETTA_PIROUETTE, CONDITIONS({IF_SPATK_GT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_TAPU_FINI, CONDITIONS({IF_SPATK_EQ_SPDEF})},
+                                {EVO_ITEM, ITEM_GALARICA_WREATH, SPECIES_HATTERENE_GMAX, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_TOXTRICITY_GMAX, CONDITIONS({IF_LEVEL, 57})}
+							),
     },
 
     [SPECIES_MELOETTA_PIROUETTE] =

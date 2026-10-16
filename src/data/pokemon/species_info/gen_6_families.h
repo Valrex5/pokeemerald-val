@@ -3547,12 +3547,12 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 
     [SPECIES_SLURPUFF] =
     {
-        .baseHP        = 82,
-        .baseAttack    = 80,
-        .baseDefense   = 86,
+        .baseHP        = 100,
+        .baseAttack    = 98,
+        .baseDefense   = 98,
         .baseSpeed     = 72,
-        .baseSpAttack  = 85,
-        .baseSpDefense = 75,
+        .baseSpAttack  = 75,
+        .baseSpDefense =  94,
         .types = MON_TYPES(TYPE_FAIRY),
         .catchRate = 140,
         .expYield = 168,
@@ -3561,13 +3561,13 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_UNBURDEN },
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_SWEET_VEIL, ABILITY_UNBURDEN, ABILITY_NONE },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Slurpuff"),
         .cryId = CRY_SLURPUFF,
         .natDexNum = NATIONAL_DEX_SLURPUFF,
-        .categoryName = _("Meringue"),
+        .categoryName = _("Ultimate"),
         .height = 8,
         .weight = 50,
         .description = COMPOUND_STRING(
@@ -3612,6 +3612,13 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         )
         .levelUpLearnset = sSlurpuffLevelUpLearnset,
         .teachableLearnset = sSlurpuffTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_COALOSSAL_GMAX, CONDITIONS({IF_KNOWS_MOVE, MOVE_LAVA_PLUME})},
+                                {EVO_LEVEL, 60, SPECIES_ALCREMIE_GMAX, CONDITIONS({IF_ATK_LT_DEF})},
+                                {EVO_LEVEL, 60, SPECIES_SLAKING, CONDITIONS({IF_ATK_GT_DEF})},
+                                {EVO_LEVEL, 60, SPECIES_HYDRAPPLE, CONDITIONS({IF_ATK_EQ_DEF})},
+                                {EVO_ITEM, ITEM_BIG_MALASADA, SPECIES_RAICHU_ALOLA, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_ICE_STONE, SPECIES_ABOMASNOW_MEGA, CONDITIONS({IF_LEVEL, 57})}
+							),
     },
 #endif //P_FAMILY_SWIRLIX
 
@@ -5582,9 +5589,9 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
 
     [SPECIES_TREVENANT] =
     {
-        .baseHP        = 85,
-        .baseAttack    = 110,
-        .baseDefense   = 76,
+        .baseHP        = 90,
+        .baseAttack    = 115,
+        .baseDefense   = 82,
         .baseSpeed     = 56,
         .baseSpAttack  = 65,
         .baseSpDefense = 82,
@@ -5596,13 +5603,13 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS, EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_NATURAL_CURE, ABILITY_FRISK, ABILITY_HARVEST },
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_NATURAL_CURE, ABILITY_HARVEST, ABILITY_NONE },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Trevenant"),
         .cryId = CRY_TREVENANT,
         .natDexNum = NATIONAL_DEX_TREVENANT,
-        .categoryName = _("Elder Tree"),
+        .categoryName = _("Ultimate"),
         .height = 15,
         .weight = 710,
         .description = COMPOUND_STRING(
@@ -5648,6 +5655,13 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         )
         .levelUpLearnset = sTrevenantLevelUpLearnset,
         .teachableLearnset = sTrevenantTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_CRABOMINABLE_MEGA, CONDITIONS({IF_KNOWS_MOVE, MOVE_ICE_HAMMER})},
+                                {EVO_LEVEL, 60, SPECIES_DARKRAI, CONDITIONS({IF_DEF_LT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_EXEGGUTOR_ALOLA, CONDITIONS({IF_DEF_GT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_CELEBI, CONDITIONS({IF_DEF_EQ_SPDEF})},
+                                {EVO_ITEM, ITEM_METAL_ALLOY, SPECIES_CELESTEELA, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_MOON_STONE, SPECIES_GRIMMSNARL_GMAX, CONDITIONS({IF_LEVEL, 57})}
+							),
     },
 #endif //P_FAMILY_PHANTUMP
 

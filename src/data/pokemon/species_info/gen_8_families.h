@@ -2344,12 +2344,12 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
 #if P_GIGANTAMAX_FORMS
     [SPECIES_COALOSSAL_GMAX] =
     {
-        .baseHP        = 110,
-        .baseAttack    = 80,
-        .baseDefense   = 120,
+        .baseHP        = 120,
+        .baseAttack    = 100,
+        .baseDefense   = 130,
         .baseSpeed     = 30,
-        .baseSpAttack  = 80,
-        .baseSpDefense = 90,
+        .baseSpAttack  = 100,
+        .baseSpDefense = 95,
         .types = MON_TYPES(TYPE_ROCK, TYPE_FIRE),
         .catchRate = 45,
         .expYield = 255,
@@ -2357,14 +2357,14 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
         .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
+        .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),
-        .abilities = { ABILITY_STEAM_ENGINE, ABILITY_FLAME_BODY, ABILITY_FLASH_FIRE },
+        .abilities = { ABILITY_STEAM_ENGINE, ABILITY_FLASH_FIRE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_BLACK,
-        .speciesName = _("Coalossal"),
+        .speciesName = _("G-Coalossal"),
         .cryId = CRY_COALOSSAL,
         .natDexNum = NATIONAL_DEX_COALOSSAL,
-        .categoryName = _("Coal"),
+        .categoryName = _("Mega"),
         .height = 420,
         .weight = 0,
         .description = COMPOUND_STRING(
@@ -2392,11 +2392,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(1, 12, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Coalossal)
-        .isGigantamax = TRUE,
-        .levelUpLearnset = sCoalossalLevelUpLearnset,
+        .levelUpLearnset = sCoalossalGmaxLevelUpLearnset,
         .teachableLearnset = sCoalossalTeachableLearnset,
-        .formSpeciesIdTable = sCoalossalFormSpeciesIdTable,
-        .formChangeTable = sCoalossalFormChangeTable,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_ROLYCOLY
@@ -2604,7 +2601,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .baseDefense   = 80,
         .baseSpeed     = 30,
         .baseSpAttack  = 100,
-        .baseSpDefense = 80,
+        .baseSpDefense = 100,
         .types = MON_TYPES(TYPE_GRASS, TYPE_DRAGON),
         .catchRate = 45,
         .expYield = 170,
@@ -2612,14 +2609,14 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_ERRATIC,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS, EGG_GROUP_DRAGON),
-        .abilities = { ABILITY_RIPEN, ABILITY_GLUTTONY, ABILITY_THICK_FAT },
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_RIPEN, ABILITY_THICK_FAT, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Appletun"),
         .cryId = CRY_APPLETUN,
         .natDexNum = NATIONAL_DEX_APPLETUN,
-        .categoryName = _("Apple Nectar"),
+        .categoryName = _("Ultimate"),
         .height = 4,
         .weight = 130,
         .description = COMPOUND_STRING(
@@ -2657,8 +2654,13 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         )
         .levelUpLearnset = sAppletunLevelUpLearnset,
         .teachableLearnset = sAppletunTeachableLearnset,
-        .formSpeciesIdTable = sAppletunFormSpeciesIdTable,
-        .formChangeTable = sAppletunFormChangeTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_IRON_TREADS, CONDITIONS({IF_KNOWS_MOVE, MOVE_FLASH_CANNON})},
+                                {EVO_LEVEL, 60, SPECIES_ALCREMIE_GMAX, CONDITIONS({IF_SPATK_LT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_SLOWBRO_GALAR, CONDITIONS({IF_SPATK_GT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_HYDRAPPLE, CONDITIONS({IF_SPATK_EQ_SPDEF})},
+                                {EVO_ITEM, ITEM_PEAT_BLOCK, SPECIES_SNORLAX_GMAX, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_MOON_STONE, SPECIES_CLEFABLE_MEGA, CONDITIONS({IF_LEVEL, 57})}
+							),
     },
 
 #if P_GIGANTAMAX_FORMS
@@ -2786,12 +2788,12 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
 
     [SPECIES_HYDRAPPLE] =
     {
-        .baseHP        = 106,
+        .baseHP        = 110,
         .baseAttack    = 80,
-        .baseDefense   = 110,
+        .baseDefense   = 120,
         .baseSpeed     = 44,
-        .baseSpAttack  = 120,
-        .baseSpDefense = 80,
+        .baseSpAttack  = 135,
+        .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_GRASS, TYPE_DRAGON),
         .catchRate = 10,
         .expYield = 270,
@@ -2799,14 +2801,14 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_ERRATIC,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS, EGG_GROUP_DRAGON),
-        .abilities = { ABILITY_SUPERSWEET_SYRUP, ABILITY_REGENERATOR, ABILITY_STICKY_HOLD },
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_SUPERSWEET_SYRUP, ABILITY_REGENERATOR, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Hydrapple"),
         .cryId = CRY_HYDRAPPLE,
         .natDexNum = NATIONAL_DEX_HYDRAPPLE,
-        .categoryName = _("Apple Hydra"),
+        .categoryName = _("Mega"),
         .height = 18,
         .weight = 930,
         .description = COMPOUND_STRING(
@@ -3799,11 +3801,11 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     [SPECIES_CENTISKORCH_GMAX] =
     {
         .baseHP        = 100,
-        .baseAttack    = 115,
-        .baseDefense   = 65,
+        .baseAttack    = 135,
+        .baseDefense   = 100,
         .baseSpeed     = 65,
         .baseSpAttack  = 90,
-        .baseSpDefense = 90,
+        .baseSpDefense = 115,
         .types = MON_TYPES(TYPE_FIRE, TYPE_BUG),
         .catchRate = 75,
         .expYield = 184,
@@ -3812,13 +3814,13 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_FLASH_FIRE, ABILITY_WHITE_SMOKE, ABILITY_FLAME_BODY },
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_FLASH_FIRE, ABILITY_WHITE_SMOKE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_RED,
-        .speciesName = _("Centiskorch"),
+        .speciesName = _("G-Centiskorch"),
         .cryId = CRY_CENTISKORCH,
         .natDexNum = NATIONAL_DEX_CENTISKORCH,
-        .categoryName = _("Radiator"),
+        .categoryName = _("Mega"),
         .height = 750,
         .weight = 0,
         .description = COMPOUND_STRING(
@@ -3846,11 +3848,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(6, 9, SHADOW_SIZE_L)
         FOOTPRINT(Centiskorch)
-        .isGigantamax = TRUE,
-        .levelUpLearnset = sCentiskorchLevelUpLearnset,
+        .levelUpLearnset = sCentiskorchGmaxLevelUpLearnset,
         .teachableLearnset = sCentiskorchTeachableLearnset,
-        .formSpeciesIdTable = sCentiskorchFormSpeciesIdTable,
-        .formChangeTable = sCentiskorchFormChangeTable,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_SIZZLIPEDE
@@ -5139,11 +5138,27 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
 #if P_GIGANTAMAX_FORMS
     [SPECIES_ALCREMIE_GMAX] =
     {
-        ALCREMIE_MISC_INFO(BODY_COLOR_YELLOW),
-        .speciesName = _("Alcremie"),
+        .baseHP        = 120,
+        .baseAttack    = 60,
+        .baseDefense   = 90,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 130,
+        .baseSpDefense = 141,
+        .types = MON_TYPES(TYPE_FAIRY),
+        .catchRate = 100,
+        .expYield = 173,  
+        .evYield_SpDefense = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 25,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_SWEET_VEIL, ABILITY_AROMA_VEIL, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_WHITE,
+        .speciesName = _("G-Alcremie"),
         .cryId = CRY_ALCREMIE,
         .natDexNum = NATIONAL_DEX_ALCREMIE,
-        .categoryName = _("Cream"),
+        .categoryName = _("Mega"),
         .height = 3,
         .weight = 5,
         .description = COMPOUND_STRING(
@@ -5171,11 +5186,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-1, 12, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Alcremie)
-        .isGigantamax = TRUE,
-        .levelUpLearnset = sAlcremieLevelUpLearnset,
+        .levelUpLearnset = sAlcremieGmaxLevelUpLearnset,
         .teachableLearnset = sAlcremieTeachableLearnset,
-        .formSpeciesIdTable = sAlcremieFormSpeciesIdTable,
-        .formChangeTable = sAlcremieFormChangeTable,
     },
 #endif //P_GIGANTAMAX_FORMS
 #endif //P_FAMILY_MILCERY
@@ -8204,10 +8216,10 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
     {
         .baseHP        = 74,
         .baseAttack    = 115,
-        .baseDefense   = 110,
+        .baseDefense   = 115,
         .baseSpeed     = 46,
-        .baseSpAttack  = 135,
-        .baseSpDefense = 100,
+        .baseSpAttack  = 145,
+        .baseSpDefense = 105,
         .types = MON_TYPES(TYPE_FAIRY, TYPE_FLYING),
         .catchRate = 3,
         .expYield = 116,
@@ -8215,14 +8227,14 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .genderRatio = MON_FEMALE,
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_SLOW,
+        .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_OVERCOAT, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_OVERCOAT, ABILITY_CONTRARY, ABILITY_NONE },
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("Enamorus"),
         .cryId = CRY_ENAMORUS_THERIAN,
         .natDexNum = NATIONAL_DEX_ENAMORUS,
-        .categoryName = _("Love-Hate"),
+        .categoryName = _("Mega"),
         .height = 16,
         .weight = 480,
         .description = COMPOUND_STRING(
@@ -8260,12 +8272,8 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
             gOverworldPalette_EnamorusTherian,
             gShinyOverworldPalette_EnamorusTherian
         )
-        .isSubLegendary = TRUE,
-        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
-        .levelUpLearnset = sEnamorusLevelUpLearnset,
+        .levelUpLearnset = sEnamorusTherianLevelUpLearnset,
         .teachableLearnset = sEnamorusTeachableLearnset,
-        .formSpeciesIdTable = sEnamorusFormSpeciesIdTable,
-        .formChangeTable = sEnamorusFormChangeTable,
     },
 #endif //P_FAMILY_ENAMORUS
 

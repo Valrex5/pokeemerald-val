@@ -1,0 +1,69 @@
+In-Training: 1-6
+Rookie: 7-19
+Champion: 23-35
+Ultimate: 39-58
+Mega: 59+
+Ultra: 75+
+
+        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_, CONDITIONS({IF_KNOWS_MOVE, MOVE_})},
+                                {EVO_LEVEL, 22, SPECIES_, CONDITIONS({IF_ATK_LT_SPATK})},
+                                {EVO_LEVEL, 22, SPECIES_, CONDITIONS({IF_ATK_GT_SPATK})},
+                                {EVO_LEVEL, 22, SPECIES_, CONDITIONS({IF_ATK_EQ_SPATK})},
+                                {EVO_ITEM, ITEM_, SPECIES_, CONDITIONS({IF_LEVEL, 17})},
+                                {EVO_ITEM, ITEM_, SPECIES_, CONDITIONS({IF_LEVEL, 19})}
+                            ),
+
+Champion:
+
+    LEVEL_UP_MOVE(0, MOVE_),
+    LEVEL_UP_MOVE(1, MOVE_),
+    LEVEL_UP_MOVE(1, MOVE_),
+    LEVEL_UP_MOVE(23, MOVE_),
+    LEVEL_UP_MOVE(26, MOVE_),
+    LEVEL_UP_MOVE(29, MOVE_),
+    LEVEL_UP_MOVE(32, MOVE_),
+    LEVEL_UP_MOVE(35, MOVE_),
+    LEVEL_UP_END
+	
+	.evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_, CONDITIONS({IF_KNOWS_MOVE, MOVE_})},
+                                {EVO_LEVEL, 39, SPECIES_, CONDITIONS({IF_SPEED_LT_SPDEF})},
+                                {EVO_LEVEL, 39, SPECIES_, CONDITIONS({IF_SPEED_GT_SPDEF})},
+                                {EVO_LEVEL, 39, SPECIES_, CONDITIONS({IF_SPEED_EQ_SPDEF})},
+                                {EVO_ITEM, ITEM_, SPECIES_, CONDITIONS({IF_LEVEL, 36})},
+                                {EVO_ITEM, ITEM_, SPECIES_, CONDITIONS({IF_LEVEL, 38})}
+							),
+							
+Ultimate:
+
+	LEVEL_UP_MOVE(0, MOVE_),
+    LEVEL_UP_MOVE(1, MOVE_),
+    LEVEL_UP_MOVE(1, MOVE_),
+    LEVEL_UP_MOVE(39, MOVE_),
+    LEVEL_UP_MOVE(42, MOVE_),
+    LEVEL_UP_MOVE(45, MOVE_),
+    LEVEL_UP_MOVE(48, MOVE_),
+    LEVEL_UP_MOVE(51, MOVE_),
+	LEVEL_UP_MOVE(54, MOVE_),
+    LEVEL_UP_END
+	
+	.evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_, CONDITIONS({IF_KNOWS_MOVE, MOVE_})},
+                                {EVO_LEVEL, 60, SPECIES_, CONDITIONS({IF_SPEED_LT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_, CONDITIONS({IF_SPEED_GT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_, CONDITIONS({IF_SPEED_EQ_SPDEF})},
+                                {EVO_ITEM, ITEM_, SPECIES_, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_, SPECIES_, CONDITIONS({IF_LEVEL, 57})}
+							),
+							
+Mega:
+
+	LEVEL_UP_MOVE(0, MOVE_),
+    LEVEL_UP_MOVE(1, MOVE_),
+    LEVEL_UP_MOVE(1, MOVE_),
+    LEVEL_UP_MOVE(62, MOVE_),
+    LEVEL_UP_MOVE(65, MOVE_),
+    LEVEL_UP_MOVE(68, MOVE_),
+    LEVEL_UP_MOVE(71, MOVE_),
+    LEVEL_UP_MOVE(74, MOVE_),
+	LEVEL_UP_MOVE(77, MOVE_),
+	LEVEL_UP_MOVE(80, MOVE_),
+    LEVEL_UP_END

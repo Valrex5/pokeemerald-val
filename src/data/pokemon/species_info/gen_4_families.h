@@ -762,7 +762,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_STARAVIA] =
     {
         .baseHP        = 55,
-        .baseAttack    = 75,
+        .baseAttack    = 80,
         .baseDefense   = 50,
         .baseSpeed     = 80,
         .baseSpAttack  = 40,
@@ -774,14 +774,14 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
         .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_INTIMIDATE, ABILITY_NONE, ABILITY_RECKLESS },
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_RECKLESS, ABILITY_NONE },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Staravia"),
         .cryId = CRY_STARAVIA,
         .natDexNum = NATIONAL_DEX_STARAVIA,
-        .categoryName = _("Starling"),
+        .categoryName = _("Champion"),
         .height = 6,
         .weight = 155,
         .description = COMPOUND_STRING(
@@ -836,7 +836,13 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sStaraviaLevelUpLearnset,
         .teachableLearnset = sStaraviaTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 34, SPECIES_STARAPTOR}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_OKIDOGI, CONDITIONS({IF_KNOWS_MOVE, MOVE_POISON_JAB})},
+                                {EVO_LEVEL, 39, SPECIES_STARAPTOR, CONDITIONS({IF_SPEED_LT_ATK})},
+                                {EVO_LEVEL, 39, SPECIES_CYCLIZAR, CONDITIONS({IF_SPEED_GT_ATK})},
+                                {EVO_LEVEL, 39, SPECIES_CARNIVINE, CONDITIONS({IF_SPEED_EQ_ATK})},
+                                {EVO_ITEM, ITEM_PEAT_BLOCK, SPECIES_CLAYDOL, CONDITIONS({IF_LEVEL, 36})},
+                                {EVO_ITEM, ITEM_WATER_STONE, SPECIES_MANTINE, CONDITIONS({IF_LEVEL, 38})}
+							),
     },
 
     [SPECIES_STARAPTOR] =
@@ -844,9 +850,9 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .baseHP        = 85,
         .baseAttack    = 120,
         .baseDefense   = 70,
-        .baseSpeed     = 100,
+        .baseSpeed     = 120,
         .baseSpAttack  = 50,
-        .baseSpDefense = P_UPDATED_STATS >= GEN_6 ? 60 : 50,
+        .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
         .catchRate = 45,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
@@ -862,14 +868,14 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
         .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_INTIMIDATE, ABILITY_NONE, ABILITY_RECKLESS },
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_INTIMIDATE, ABILITY_RECKLESS, ABILITY_NONE },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Staraptor"),
         .cryId = CRY_STARAPTOR,
         .natDexNum = NATIONAL_DEX_STARAPTOR,
-        .categoryName = _("Predator"),
+        .categoryName = _("Ultimate"),
         .height = 12,
         .weight = 249,
         .description = COMPOUND_STRING(
@@ -922,8 +928,13 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sStaraptorLevelUpLearnset,
         .teachableLearnset = sStaraptorTeachableLearnset,
-        .formSpeciesIdTable = sStaraptorFormSpeciesIdTable,
-        .formChangeTable = sStaraptorFormChangeTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_STARAPTOR_MEGA, CONDITIONS({IF_KNOWS_MOVE, MOVE_CLOSE_COMBAT})},
+                                {EVO_LEVEL, 60, SPECIES_SALAMENCE, CONDITIONS({IF_SPEED_LT_ATK})},
+                                {EVO_LEVEL, 60, SPECIES_BRAVIARY_HISUI, CONDITIONS({IF_SPEED_GT_ATK})},
+                                {EVO_LEVEL, 60, SPECIES_BLAZIKEN_MEGA, CONDITIONS({IF_SPEED_EQ_ATK})},
+                                {EVO_ITEM, ITEM_WHIPPED_DREAM, SPECIES_ALTARIA_MEGA, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_ZAPDOS, CONDITIONS({IF_LEVEL, 57})}
+							),
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS
@@ -2438,29 +2449,29 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 
     [SPECIES_VESPIQUEN] =
     {
-        .baseHP        = 70,
-        .baseAttack    = 80,
-        .baseDefense   = 102,
+        .baseHP        = 75,
+        .baseAttack    = 100,
+        .baseDefense   = 108,
         .baseSpeed     = 40,
         .baseSpAttack  = 80,
-        .baseSpDefense = 102,
+        .baseSpDefense = 108,
         .types = MON_TYPES(TYPE_BUG, TYPE_FLYING),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 166 : 188,
         .evYield_Defense = 1,
         .evYield_SpDefense = 1,
         .itemRare = ITEM_POISON_BARB,
-        .genderRatio = MON_FEMALE,
+        .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 15,
         .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_PRESSURE, ABILITY_NONE, ABILITY_UNNERVE },
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_PRESSURE, ABILITY_UNNERVE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Vespiquen"),
         .cryId = CRY_VESPIQUEN,
         .natDexNum = NATIONAL_DEX_VESPIQUEN,
-        .categoryName = _("Beehive"),
+        .categoryName = _("Ultimate"),
         .height = 12,
         .weight = 385,
         .description = COMPOUND_STRING(
@@ -2510,6 +2521,13 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sVespiquenLevelUpLearnset,
         .teachableLearnset = sVespiquenTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_GOLISOPOD_MEGA, CONDITIONS({IF_KNOWS_MOVE, MOVE_IRON_HEAD})},
+                                {EVO_LEVEL, 60, SPECIES_BUTTERFREE_GMAX, CONDITIONS({IF_DEF_LT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_MAGNEZONE, CONDITIONS({IF_DEF_GT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_BEEDRIL_MEGA, CONDITIONS({IF_DEF_EQ_SPDEF})},
+                                {EVO_ITEM, ITEM_HONEY, SPECIES_FLOETTE_ETERNAL, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_FIRE_STONE, SPECIES_VOLCARONA, CONDITIONS({IF_LEVEL, 57})}
+							),
     },
 #endif //P_FAMILY_COMBEE
 
@@ -2910,34 +2928,32 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sCherrimLevelUpLearnset,
         .teachableLearnset = sCherrimTeachableLearnset,
-        .formSpeciesIdTable = sCherrimFormSpeciesIdTable,
-        .formChangeTable = sCherrimFormChangeTable,
     },
 
     [SPECIES_CHERRIM_SUNSHINE] =
     {
         .baseHP        = 70,
-        .baseAttack    = 60,
+        .baseAttack    = 87,
         .baseDefense   = 70,
-        .baseSpeed     = 85,
-        .baseSpAttack  = 87,
-        .baseSpDefense = 78,
+        .baseSpeed     = 74,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 87,
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 75,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 158 : 133,
-        .evYield_SpAttack = 2,
+        .evYield_Attack = 2,
         .itemRare = ITEM_MIRACLE_SEED,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FAIRY, EGG_GROUP_GRASS),
-        .abilities = { ABILITY_FLOWER_GIFT, ABILITY_NONE, ABILITY_NONE },
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_FLOWER_GIFT, ABILITY_WONDER_SKIN, ABILITY_NONE },
         .bodyColor = BODY_COLOR_PINK,
         .speciesName = _("Cherrim"),
         .cryId = CRY_CHERRIM,
         .natDexNum = NATIONAL_DEX_CHERRIM,
-        .categoryName = _("Blossom"),
+        .categoryName = _("Champion"),
         .height = 5,
         .weight = 93,
         .description = COMPOUND_STRING(
@@ -2983,8 +2999,13 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sCherrimLevelUpLearnset,
         .teachableLearnset = sCherrimTeachableLearnset,
-        .formSpeciesIdTable = sCherrimFormSpeciesIdTable,
-        .formChangeTable = sCherrimFormChangeTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_GOLEM_ALOLA, CONDITIONS({IF_KNOWS_MOVE, MOVE_ROCK_SLIDE})},
+                                {EVO_LEVEL, 39, SPECIES_VENUSAUR, CONDITIONS({IF_ATK_LT_SPDEF})},
+                                {EVO_LEVEL, 39, SPECIES_SOLROCK, CONDITIONS({IF_ATK_GT_SPDEF})},
+                                {EVO_LEVEL, 39, SPECIES_SHAYMIN_LAND, CONDITIONS({IF_ATK_EQ_SPDEF})},
+                                {EVO_ITEM, ITEM_METAL_ALLOY, SPECIES_FERROTHORN, CONDITIONS({IF_LEVEL, 36})},
+                                {EVO_ITEM, ITEM_WATER_STONE, SPECIES_AZUMARILL, CONDITIONS({IF_LEVEL, 38})}
+							),
     },
 #endif //P_FAMILY_CHERUBI
 
@@ -4045,12 +4066,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #if P_FAMILY_CHATOT
     [SPECIES_CHATOT] =
     {
-        .baseHP        = 76,
+        .baseHP        = 88,
         .baseAttack    = 65,
-        .baseDefense   = 45,
-        .baseSpeed     = 91,
-        .baseSpAttack  = 92,
-        .baseSpDefense = 42,
+        .baseDefense   = 50,
+        .baseSpeed     = 114,
+        .baseSpAttack  = 114,
+        .baseSpDefense = 47,
         .types = MON_TYPES(TYPE_NORMAL, TYPE_FLYING),
         .catchRate = 30,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 144 : 107,
@@ -4059,14 +4080,14 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = 35,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_KEEN_EYE, ABILITY_TANGLED_FEET, ABILITY_BIG_PECKS },
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_PUNK_ROCK, ABILITY_NO_GUARD, ABILITY_NONE },
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Chatot"),
         .cryId = CRY_CHATOT,
         .natDexNum = NATIONAL_DEX_CHATOT,
-        .categoryName = _("Music Note"),
+        .categoryName = _("Ultimate"),
         .height = 5,
         .weight = 19,
         .description = COMPOUND_STRING(
@@ -4120,10 +4141,15 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Chatot,
             gShinyOverworldPalette_Chatot
         )
-        .isSkyBattleBanned = B_SKY_BATTLE_STRICT_ELIGIBILITY,
         .levelUpLearnset = sChatotLevelUpLearnset,
         .teachableLearnset = sChatotTeachableLearnset,
-        .eggMoveLearnset = sChatotEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_AURORUS, CONDITIONS({IF_KNOWS_MOVE, MOVE_POWER_GEM})},
+                                {EVO_LEVEL, 60, SPECIES_EXPLOUD, CONDITIONS({IF_SPEED_LT_SPATK})},
+                                {EVO_LEVEL, 60, SPECIES_TAPU_KOKO, CONDITIONS({IF_SPEED_GT_SPATK})},
+                                {EVO_LEVEL, 60, SPECIES_ALTARIA_MEGA, CONDITIONS({IF_SPEED_EQ_SPATK})},
+                                {EVO_ITEM, ITEM_DRAGON_SCALE, SPECIES_TYRANTRUM, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_ICE_STONE, SPECIES_ARTICUNO, CONDITIONS({IF_LEVEL, 57})}
+							),
     },
 #endif //P_FAMILY_CHATOT
 
@@ -5361,12 +5387,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #if P_FAMILY_CARNIVINE
     [SPECIES_CARNIVINE] =
     {
-        .baseHP        = 74,
+        .baseHP        = 104,
         .baseAttack    = 100,
-        .baseDefense   = 72,
+        .baseDefense   = 86,
         .baseSpeed     = 46,
-        .baseSpAttack  = 90,
-        .baseSpDefense = 72,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 86,
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 200,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 159 : 164,
@@ -5374,15 +5400,15 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 25,
         .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
-        .abilities = { ABILITY_LEVITATE, ABILITY_NONE, ABILITY_NONE },
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_LEVITATE, ABILITY_HUSTLE, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
         .speciesName = _("Carnivine"),
         .cryId = CRY_CARNIVINE,
         .natDexNum = NATIONAL_DEX_CARNIVINE,
-        .categoryName = _("Bug Catcher"),
+        .categoryName = _("Ultimate"),
         .height = 14,
         .weight = 270,
         .description = COMPOUND_STRING(
@@ -5436,6 +5462,13 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .levelUpLearnset = sCarnivineLevelUpLearnset,
         .teachableLearnset = sCarnivineTeachableLearnset,
         .eggMoveLearnset = sCarnivineEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_PINSIR_MEGA, CONDITIONS({IF_KNOWS_MOVE, MOVE_FLOATY_FALL})},
+                                {EVO_LEVEL, 60, SPECIES_PHEROMOSA, CONDITIONS({IF_DEF_LT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_MAWILE_MEGA, CONDITIONS({IF_DEF_GT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_VICTREEBEL_MEGA, CONDITIONS({IF_DEF_EQ_SPDEF})},
+                                {EVO_ITEM, ITEM_METAL_ALLOY, SPECIES_GOLISOPOD_MEGA, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_DUSK_STONE, SPECIES_GUZZLORD, CONDITIONS({IF_LEVEL, 57})}
+							),
     },
 #endif //P_FAMILY_CARNIVINE
 
@@ -6880,11 +6913,11 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
 #if P_FAMILY_HEATRAN
     [SPECIES_HEATRAN] =
     {
-        .baseHP        = 91,
+        .baseHP        = 101,
         .baseAttack    = 90,
         .baseDefense   = 106,
         .baseSpeed     = 77,
-        .baseSpAttack  = 130,
+        .baseSpAttack  = 138,
         .baseSpDefense = 106,
         .types = MON_TYPES(TYPE_FIRE, TYPE_STEEL),
         .catchRate = 3,
@@ -6899,14 +6932,14 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 10,
         .friendship = 100,
-        .growthRate = GROWTH_SLOW,
+        .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_FLASH_FIRE, ABILITY_NONE, ABILITY_FLAME_BODY },
+        .abilities = { ABILITY_FLASH_FIRE, ABILITY_FLAME_BODY, ABILITY_NONE },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Heatran"),
         .cryId = CRY_HEATRAN,
         .natDexNum = NATIONAL_DEX_HEATRAN,
-        .categoryName = _("Lava Dome"),
+        .categoryName = _("Mega"),
         .height = 17,
         .weight = 4300,
         .description = COMPOUND_STRING(
@@ -6947,12 +6980,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_Heatran,
             gShinyOverworldPalette_Heatran
         )
-        .isSubLegendary = TRUE,
-        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sHeatranLevelUpLearnset,
         .teachableLearnset = sHeatranTeachableLearnset,
-        .formSpeciesIdTable = sHeatranFormSpeciesIdTable,
-        .formChangeTable = sHeatranFormChangeTable,
     },
 
 #if P_GEN_9_MEGA_EVOLUTIONS
@@ -7661,9 +7690,9 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
     [SPECIES_SHAYMIN_LAND] =
     {
         .baseHP        = 100,
-        .baseAttack    = 100,
-        .baseDefense   = 100,
-        .baseSpeed     = 100,
+        .baseAttack    = 80,
+        .baseDefense   = 95,
+        .baseSpeed     = 80,
         .baseSpAttack  = 100,
         .baseSpDefense = 100,
         .types = MON_TYPES(TYPE_GRASS),
@@ -7672,17 +7701,17 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .evYield_HP = 3,
         .itemCommon = ITEM_LUM_BERRY,
         .itemRare = ITEM_LUM_BERRY,
-        .genderRatio = MON_GENDERLESS,
+        .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 120,
         .friendship = 100,
-        .growthRate = GROWTH_MEDIUM_SLOW,
+        .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_NATURAL_CURE, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_NATURAL_CURE, ABILITY_FLOWER_VEIL, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Shaymin"),
         .cryId = CRY_SHAYMIN_LAND,
         .natDexNum = NATIONAL_DEX_SHAYMIN,
-        .categoryName = _("Gratitude"),
+        .categoryName = _("Ultimate"),
         .height = 2,
         .weight = 21,
         .description = COMPOUND_STRING(
@@ -7723,13 +7752,15 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             gOverworldPalette_ShayminLand,
             gShinyOverworldPalette_ShayminLand
         )
-        .isMythical = TRUE,
-        .isFrontierBanned = TRUE,
-        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sShayminLandLevelUpLearnset,
         .teachableLearnset = sShayminLandTeachableLearnset,
-        .formSpeciesIdTable = sShayminFormSpeciesIdTable,
-        .formChangeTable = sShayminFormChangeTable,
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_CAMERUPT_MEGA, CONDITIONS({IF_KNOWS_MOVE, MOVE_EARTH_POWER})},
+                                {EVO_LEVEL, 60, SPECIES_GLIMMORA_MEGA, CONDITIONS({IF_SPATK_LT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_SHAYMIN_SKY, CONDITIONS({IF_SPATK_GT_SPDEF})},
+                                {EVO_LEVEL, 60, SPECIES_CELEBI, CONDITIONS({IF_SPATK_EQ_SPDEF})},
+                                {EVO_ITEM, ITEM_GALARICA_WREATH, SPECIES_ZARUDE, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_DUSK_STONE, SPECIES_WO_CHIEN, CONDITIONS({IF_LEVEL, 57})}
+							),
     },
 
     [SPECIES_SHAYMIN_SKY] =

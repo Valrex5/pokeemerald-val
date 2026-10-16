@@ -2343,8 +2343,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
     [SPECIES_CERULEDGE] =
     {
         .baseHP        = 75,
-        .baseAttack    = 125,
-        .baseDefense   = 80,
+        .baseAttack    = 115,
+        .baseDefense   = 85,
         .baseSpeed     = 85,
         .baseSpAttack  = 60,
         .baseSpDefense = 100,
@@ -2355,14 +2355,14 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 35,
         .friendship = 20,
-        .growthRate = GROWTH_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_HUMAN_LIKE),
-        .abilities = { ABILITY_FLASH_FIRE, ABILITY_NONE, ABILITY_WEAK_ARMOR },
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_FLASH_FIRE, ABILITY_WEAK_ARMOR, ABILITY_NONE },
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Ceruledge"),
         .cryId = CRY_CERULEDGE,
         .natDexNum = NATIONAL_DEX_CERULEDGE,
-        .categoryName = _("Fire Blades"),
+        .categoryName = _("Ultimate"),
         .height = 16,
         .weight = 620,
         .description = COMPOUND_STRING(
@@ -2401,6 +2401,13 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sCeruledgeLevelUpLearnset,
         .teachableLearnset = sCeruledgeTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_YVELTAL, CONDITIONS({IF_KNOWS_MOVE, MOVE_DRILL_PECK})},
+                                {EVO_LEVEL, 60, SPECIES_GUZZLORD, CONDITIONS({IF_SPEED_LT_DEF})},
+                                {EVO_LEVEL, 60, SPECIES_MARSHADOW, CONDITIONS({IF_SPEED_GT_DEF})},
+                                {EVO_LEVEL, 60, SPECIES_ZEKROM, CONDITIONS({IF_SPEED_EQ_DEF})},
+                                {EVO_ITEM, ITEM_PROTECTOR, SPECIES_RHYPERIOR, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_DAWN_STONE, SPECIES_LOPUNNY_MEGA, CONDITIONS({IF_LEVEL, 57})}
+							),
     },
 #endif //P_FAMILY_CHARCADET
 
@@ -4422,11 +4429,11 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #if P_FAMILY_CYCLIZAR
     [SPECIES_CYCLIZAR] =
     {
-        .baseHP        = 70,
-        .baseAttack    = 95,
+        .baseHP        = 85,
+        .baseAttack    = 105,
         .baseDefense   = 65,
         .baseSpeed     = 121,
-        .baseSpAttack  = 85,
+        .baseSpAttack  = 105,
         .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_DRAGON, TYPE_NORMAL),
         .catchRate = 190,
@@ -4435,14 +4442,14 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 30,
         .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_SLOW,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_SHED_SKIN, ABILITY_NONE, ABILITY_REGENERATOR },
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .abilities = { ABILITY_SHED_SKIN, ABILITY_REGENERATOR, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Cyclizar"),
         .cryId = CRY_CYCLIZAR,
         .natDexNum = NATIONAL_DEX_CYCLIZAR,
-        .categoryName = _("Mount"),
+        .categoryName = _("Ultimate"),
         .height = 16,
         .weight = 630,
         .description = COMPOUND_STRING(
@@ -4482,6 +4489,13 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .levelUpLearnset = sCyclizarLevelUpLearnset,
         .teachableLearnset = sCyclizarTeachableLearnset,
         .eggMoveLearnset = sCyclizarEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_KOMMO_O, CONDITIONS({IF_KNOWS_MOVE, MOVE_AURA_SPHERE})},
+                                {EVO_LEVEL, 60, SPECIES_KORAIDON, CONDITIONS({IF_ATK_LT_SPATK})},
+                                {EVO_LEVEL, 60, SPECIES_MIRAIDON, CONDITIONS({IF_ATK_GT_SPATK})},
+                                {EVO_LEVEL, 60, SPECIES_ZERAORA, CONDITIONS({IF_ATK_EQ_SPATK})},
+                                {EVO_ITEM, ITEM_ADAMANT_CRYSTAL, SPECIES_DIALGA, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_THUNDURUS_THERIAN, CONDITIONS({IF_LEVEL, 57})}
+							),
     },
 #endif //P_FAMILY_CYCLIZAR
 
@@ -5716,28 +5730,28 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #if P_FAMILY_BRUTE_BONNET
     [SPECIES_BRUTE_BONNET] =
     {
-        .baseHP        = 111,
-        .baseAttack    = 127,
-        .baseDefense   = 99,
-        .baseSpeed     = 55,
+        .baseHP        = 117,
+        .baseAttack    = 133,
+        .baseDefense   = 109,
+        .baseSpeed     = 51,
         .baseSpAttack  = 79,
-        .baseSpDefense = 99,
+        .baseSpDefense = 109,
         .types = MON_TYPES(TYPE_GRASS, TYPE_DARK),
         .catchRate = 50,
         .expYield = 285,
         .evYield_Attack = 3,
         .itemRare = ITEM_BOOSTER_ENERGY,
-        .genderRatio = MON_GENDERLESS,
+        .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 50,
         .friendship = 0,
-        .growthRate = GROWTH_SLOW,
+        .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_PROTOSYNTHESIS, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_PROTOSYNTHESIS, ABILITY_POISON_HEAL, ABILITY_NONE },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Brute Bonnet"),
         .cryId = CRY_BRUTE_BONNET,
         .natDexNum = NATIONAL_DEX_BRUTE_BONNET,
-        .categoryName = _("Paradox"),
+        .categoryName = _("Mega"),
         .height = 12,
         .weight = 210,
         .description = COMPOUND_STRING(
@@ -5774,7 +5788,6 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             gOverworldPalette_BruteBonnet,
             gShinyOverworldPalette_BruteBonnet
         )
-        .isParadox = TRUE,
         .levelUpLearnset = sBruteBonnetLevelUpLearnset,
         .teachableLearnset = sBruteBonnetTeachableLearnset,
     },
@@ -5986,8 +5999,8 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
 #if P_FAMILY_IRON_TREADS
     [SPECIES_IRON_TREADS] =
     {
-        .baseHP        = 90,
-        .baseAttack    = 112,
+        .baseHP        = 100,
+        .baseAttack    = 122,
         .baseDefense   = 120,
         .baseSpeed     = 106,
         .baseSpAttack  = 72,
@@ -5997,17 +6010,17 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         .expYield = 285,
         .evYield_Defense = 3,
         .itemRare = ITEM_BOOSTER_ENERGY,
-        .genderRatio = MON_GENDERLESS,
+        .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 50,
         .friendship = 0,
-        .growthRate = GROWTH_SLOW,
+        .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_QUARK_DRIVE, ABILITY_NONE, ABILITY_NONE },
+        .abilities = { ABILITY_QUARK_DRIVE, ABILITY_TECHNICIAN, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GRAY,
         .speciesName = _("Iron Treads"),
         .cryId = CRY_IRON_TREADS,
         .natDexNum = NATIONAL_DEX_IRON_TREADS,
-        .categoryName = _("Paradox"),
+        .categoryName = _("Mega"),
         .height = 9,
         .weight = 2400,
         .description = COMPOUND_STRING(
@@ -6044,7 +6057,6 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             gOverworldPalette_IronTreads,
             gShinyOverworldPalette_IronTreads
         )
-        .isParadox = TRUE,
         .levelUpLearnset = sIronTreadsLevelUpLearnset,
         .teachableLearnset = sIronTreadsTeachableLearnset,
     },
@@ -7769,25 +7781,25 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
     {
         .baseHP        = 88,
         .baseAttack    = 128,
-        .baseDefense   = 115,
-        .baseSpeed     = 80,
+        .baseDefense   = 128,
+        .baseSpeed     = 70,
         .baseSpAttack  = 58,
-        .baseSpDefense = 86,
+        .baseSpDefense = 76,
         .types = MON_TYPES(TYPE_POISON, TYPE_FIGHTING),
         .catchRate = 3,
         .expYield = 278,
         .evYield_Attack = 3,
-        .genderRatio = MON_MALE,
+        .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 120,
         .friendship = 0,
-        .growthRate = GROWTH_SLOW,
+        .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_TOXIC_CHAIN, ABILITY_NONE, ABILITY_GUARD_DOG },
+        .abilities = { ABILITY_TOXIC_CHAIN, ABILITY_GUARD_DOG, ABILITY_NONE },
         .bodyColor = BODY_COLOR_BLACK,
         .speciesName = _("Okidogi"),
         .cryId = CRY_OKIDOGI,
         .natDexNum = NATIONAL_DEX_OKIDOGI,
-        .categoryName = _("Retainer"),
+        .categoryName = _("Ultimate"),
         .height = 18,
         .weight = 920,
         .description = COMPOUND_STRING(
@@ -7824,10 +7836,15 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
             gOverworldPalette_Okidogi,
             gShinyOverworldPalette_Okidogi
         )
-        .isSubLegendary = TRUE,
-        .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sOkidogiLevelUpLearnset,
         .teachableLearnset = sOkidogiTeachableLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 56, SPECIES_BRUTE_BONNET, CONDITIONS({IF_KNOWS_MOVE, MOVE_HORN_LEECH})},
+                                {EVO_LEVEL, 60, SPECIES_DEOXYS_DEFENSE, CONDITIONS({IF_ATK_LT_DEF})},
+                                {EVO_LEVEL, 60, SPECIES_TOXICROAK, CONDITIONS({IF_ATK_GT_DEF})},
+                                {EVO_LEVEL, 60, SPECIES_PECHARUNT, CONDITIONS({IF_ATK_EQ_DEF})},
+                                {EVO_ITEM, ITEM_PEAT_BLOCK, SPECIES_MAMOSWINE, CONDITIONS({IF_LEVEL, 55})},
+                                {EVO_ITEM, ITEM_ICE_STONE, SPECIES_CHIEN_PAO, CONDITIONS({IF_LEVEL, 57})}
+							),
     },
 #endif //P_FAMILY_OKIDOGI
 
