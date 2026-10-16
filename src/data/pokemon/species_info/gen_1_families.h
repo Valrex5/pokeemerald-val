@@ -4,7 +4,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif
 
 #if P_FAMILY_BULBASAUR
-    [SPECIES_BULBASAUR] =
+    [SPECIES_BULBASAUR] = asfasf
     {
         .baseHP        = 45,
         .baseAttack    = 49,
